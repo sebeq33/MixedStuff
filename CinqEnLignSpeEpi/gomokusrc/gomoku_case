@@ -1,0 +1,279 @@
+* GOMOKU * REPRESENTATION DES CONNAISSANCES
+
+- - - - - - - - - - - - - - - - - - - || Pour chaque joueur ? surement
+- - - - - - - - - - - - - - - - - - - || Direction ? a voir, ptet pas utile
+- - - - - - - - - - - - - - - - - - - || 
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - || SCO
+- - X 0 - - - - - - - - - - - - - - - || --- || pion qui serait en danger en posant une piece a coté
+- - - 0 - - - - - - - - - - - - - - - || --- || pion
+- - - 0 0 - - - - - - - - - - - - - - || --- || 2 align prenable
+- - X 0 0 - - - - - - - - - - - - - - || --- || 2 align prenable et en danger
+- - - 0 - 0 - - - - - - - - - - - - - || --- || 2 align non prenable avec 1 trou
+- - - 0 - - 0 - - - - - - - - - - - - || --- || 2 align non prenable avec 2 trou
+- - X 0 0 X - - - - - - - - - - - - - || --- || 2 align non prenable sans trou
+- - - 0 0 - 0 - - - - - - - - - - - - || --- || 3 align avec 1 trou
+- - - 0 - 0 - 0 - - - - - - - - - - - || --- || 3 align avec 2 trou
+- - - 0 0 0 - - - - - - - - - - - - - || --- || 3 align sans trou
+- - - 0 0 0 - 0 - - - - - - - - - - - || --- || 4 align avec trou
+- - - 0 0 0 0 - - - - - - - - - - - - || --- || 4 align sans trou
+- - - 0 0 0 0 0 - - - - - - - - - - - || --- || 5 align
+- - - - - - - - - - - - - - - - - - - ||
+
+uint32_t ?
+seules les cases vides importent pour l'ia.
+les cases pleines ne sont pas intéressantes car déjà prises et non jouables.
+les cases pleines ne servent donc qu'à remplir les cases vides.
+
+stack limit = +- 8 000 000 oct;
+
+=========================================================================================================
+color		-> 2 bit
+point pour j1	-> 15 bit
+point pour j2	-> 15 bit
+=========================================================================================================
+
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - 0 0 0 0 ? - - - - - - - - || --- || quelles infos donner à une case vide ?
+- - - - - - - - - - X - - - - - - - - || --- || laisser des infos pour les deux joueurs
+- - - - - - - - - - X - - - - - - - - ||
+- - - - - - - - - - X - - - - - - - - ||
+- - - - - - - - - - X - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+
+=========================================================================================================
+=========================================================================================================
+
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - x - - - x - - - x - - - - - ||
+- - - - - - x - - x - - x - - - - - - ||
+- - - - - - - x - x - x - - - - - - - ||
+- - - - - - - - x x x - - - - - - - - ||
+- - - - - x x x x 0 x x x x - - - - - || 32 cases * 2 bit color + 2bit color de la cases actuelles
+- - - - - - - - x x x - - - - - - - - ||
+- - - - - - - x - x - x - - - - - - - ||
+- - - - - - x - - x - - x - - - - - - ||
+- - - - - x - - - x - - - x - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+
+=========================================================================================================
+=========================================================================================================
+
+comment check les patterns
+
+
+(0 = pos actuellement check)		(0 = obstacle (soit hors zone, soit piece adv))
+|--------|
+0 x x 0 f f f f - - - - - - - - - - - || pattern 5 
+x x f f f - - - - - - - - - - - - - - || [x x x x x]		4096
+x f x f - f - - - - - - - - - - - - - ||
+x - - x - - f - - - - - - - - - - - - ||
+x - - f x - - f - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - 0 - - - ||
+- - - - - - - - - - - - - - x x - - - ||
+- - - - - - - - - - - - - x - x - - - ||
+- - - - - - - - - - - - x - - x - - - ||
+- - - - - - - - - - - x - - - x - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - 0 x x x x - - - - - - - - - - - ||
+- - - x x - - - - 0 x x x x - - - - - ||
+- - - x - x - - - - - - - - - - - - - ||
+- - - x - - x - - - - - - - - - - - - ||
+- - - x - - - x - - - - - - - - - - - ||
+
+- - - - - - - - - - - - - - - - - - - || pattern 4 
+- - - - - - - - - - - - - - - - - - - || [0 x x x x   0]	256
+- - f x x - - - - - - - - - - - - - - || [0 x x x   x 0]	256
+- - x 0 x x x x - - - - - - - - - - - || [  x x x   x 0]	512
+- - x x f - - - - - - - - - - - - - - || [0 x x x   x  ]	512
+- x - x - f - - - - - - - - - - - - - || [  x x x   x  ]	1024
+x - - x - - f - - - - - - - - - - - - || [  x x x x  ]		2048
+- - - x - - - f - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+
+- - - - - - - - - - - - - - - - - - - || pattern 3
+- - - - - - - - - - - - - - - - - - - || [0 x x   x   0]
+- - - - - - - - - - - - - - - - - - - || [0 x x x     0]
+- - - - - - - - - - - - - - - - - - - || [  x x   x 0 ?]
+- - - - - - - - - - - - - - - - - - - || [  x x x   0 ?]
+- - - - - - - - - - - - - - - - - - - || [             ]
+- - - - - - - - - - - - - - - - - - - || 
+- - - - - - - - - - - - - - - - - - - || 
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+
+=========================================================================================================
+=========================================================================================================
+
+ET BIM =D
+une Direction = juste 18 bit, 2 bit par couleur sur 9 cases
+tableau de 4 Direction avec au centre de chaque la couleur de la case actuelle ((18 * 4 = 72 bits) / 8 = 9 octets)
+8 petite boucle pour chaque direction faisant chacune 4 calcul (plus les calculs pour ce deplacer genre i++)
+elles avance 4 fois dans un sens dans la map (sauf mur) et set les bits dans la direction correspondante pour avoir toutes les couleur actuellement presente
+on essaie de faire le calcul pour les 2 joueurs en une seul boucle (toujour sur un tab de 8)
+sur ces 4 direction on cherche en faisant juste passer un mask s'il correspond a un pattern
+
+ex:
+
+- - - - - - - x - x - x - - - - - - - || disons que la ligne de f vaut actuellement		[- - 0 - V x x x -] V = vide
+- - - - - - - - x x x - - - - - - - - || on recupere un sens (droite) dans la direction		[- - - - V x x x -] 4 calcul + 4 deplacement + 4 asignation = 12
+- - - - - f f f f 0 f f f f - - - - - || puis l'autre sens					[- - 0 - V x x x -]
+- - - - - - - - x x x - - - - - - - - || maintenant nos 18 bits valent				[00 00 01 00 00 10 10 10 00]
+- - - - - - - x - x - x - - - - - - - || on passe les mask des pattern connu dans l'ordre	[00 10 10 10 00 10 10 10 00] if res
+- - - - - - x - - x - - x - - - - - - || 
+- - - - - x - - - x - - - x - - - - - || 
+- - - - - - - - - - - - - - - - - - - || 
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+- - - - - - - - - - - - - - - - - - - ||
+
+=========================================================================================================
+=========================================================================================================
+
+X = NOUS
+V = VIDE
+O = L'ADV
+
+A IGNORER
+[DOUBLE TROIS]
+[CASE DÉJA PRISES]
+[BORDURE NE SUFFISANT PAS A MATCH AU MOINS 4 OU LA TAILLE DU PATTERN]
+
+DANGER
+[O O O O O]		4 Translation
+[V O O O O V]		4 Translation
+[V O O O O X]		8 Translation
+[V O O O V]		4 Translation
+[V O O V]		4 Translation
+[V O V O O V]		8 Translation
+[O V O O O]		8 Translation
+[O O V O O]		4 Translation
+[V O O V V O V]		8 Translation
+[O X X V]		8 Translation // POUR LA PRISES DE PIECES //(L'IMPORTANCE DEPEND DU SCORE ADV)
+		       ___
+			68
+
+INTERET
+[X X X X X]		4 Translation
+[V X X X X V]		4 Translation
+[V X X X X O]		8 Translation
+[V X X X V]		4 Translation
+[V X X V]		4 Translation
+[V X V X X V]		8 Translation
+[X V X X X]		8 Translation
+[X X V X X]		4 Translation
+[V X X V V X V]		8 Translation
+[X O O V]		8 Translation // POUR LA PRISES DE PIECES // (L'IMPORTANCE DEPEND DE NOTRE SCORE ACTUEL)
+		       ___
+			68
+
+=========================================================================================================
+=========================================================================================================
+
+DOUBLE TROIS
+
+TROIS = Alignement de 3 pierres et de vides
+[V X X X V]		4 Translation
+[V X X V X V]		8 Translation
+// [V X X V V X V]	8 Translation ==> /!\ ne constitue pas un trois libre
+//ft : http://membres.multimania.fr/schwand/ludocrat/gomoku.htm (donner dans le sujet)
+
+DOUBLE TROIS = 2 TROIS qui serait crée sur une même case
+
+- - - - - - ||
+- - x x N - || 
+- - - - x - || 
+- - - - x - || 
+- - - - - - ||
+ 
+- - - - - - - ||
+- x x N - - - ||
+- - - - - - - ||
+- - - - - x - ||
+- - - - - - x ||
+
+- - - - - - ||
+- - - x - - ||
+- - N x x - ||
+- x - - - - ||
+- - - - - - ||
+
+- - - - - - ||
+- - x - - - ||
+- - x x x - || /!\ ne check pas seulement la ou est la piece jouée
+- - N - - - ||
+- - - - - - ||
+
+- - - - - - ||
+- - N - - - ||
+- - x - - - ||
+- - x x x - || /!\ ne check pas seulement la ou est la piece jouée
+- - - - - - ||
+
+EXCEPTION
+
+- - - - - - - ||
+- Y - - x x - || [v x x v v x] ne constitue par un composant d'un double 3
+- x - - - - - ||
+- x - - - - - ||
+- - - - - - - ||
+
+- x x Y 0 - || bloqué par un pion donc valide
+- - - x - - || 
+- - - x - - || 
+- - - - - - || 
+
+- x x x Y - || un 4 ne compte pas comme un trois
+- - - - x - ||
+- - - - x - ||
+- - - - - - ||
