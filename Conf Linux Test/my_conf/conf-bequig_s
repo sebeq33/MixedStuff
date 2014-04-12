@@ -1,2 +1,3 @@
 cat .tmpXdefaults | sed -e 's/black/pink/' | sed -e 's/white/green/' > .Xdefaults
+
 alias ./a.out 'usleep 1000; echo Segmentation fault'
