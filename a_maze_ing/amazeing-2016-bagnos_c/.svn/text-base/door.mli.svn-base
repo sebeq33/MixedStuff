@@ -1,0 +1,15 @@
+module type DOOR =
+  sig
+    type status
+    type door
+      
+    val new_door : (int * int) -> (int * int) -> door
+    val is_open : door -> bool
+    val open_door : door -> unit
+    val get_status : door -> status
+    val set_status : door -> status -> unit
+    val get_left : door -> (int * int)
+    val get_right : door -> (int * int)
+    val get_other : door -> (int * int) -> (int * int)
+      
+  end

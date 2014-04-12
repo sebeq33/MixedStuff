@@ -1,0 +1,15 @@
+open Door
+
+module type SQUARE =
+  sig
+    type square
+
+    val new_square : int list -> square
+    val empty : unit -> square
+    val is_empty : square -> bool  
+
+    val get_id : square -> int
+    val set_id : square -> int -> unit
+    val get_nbDoors : square -> int
+    val get_doors : square -> int list
+  end

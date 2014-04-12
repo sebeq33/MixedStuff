@@ -1,0 +1,28 @@
+open Square
+
+module type MAZE =
+  sig
+
+    type maze
+
+    val new_maze : int -> int -> maze
+
+    val display_maze : maze -> unit
+
+    val get_dimx : maze -> int
+    val get_dimy : maze -> int
+    val get_start : maze -> (int * int)
+    val get_finish : maze -> (int * int)
+    val set_start : maze -> (int * int) -> unit
+    val set_finish : maze -> (int * int) -> unit
+    val get_square : maze -> int -> int -> Square.square
+    val set_square : maze -> int -> int -> int -> unit
+
+    val in_maze : maze -> int -> int -> bool
+    val check_end : maze -> bool
+
+    val gen_maze : maze -> (maze -> maze) -> maze
+    val gen_random : maze -> maze
+    val gen_stack : maze -> maze
+
+  end

@@ -1,0 +1,10 @@
+OCAML=ocamlopt
+OCAMLFLAGS= -I +sdl
+OCAMLLD= bigarray.cmxa sdl.cmxa
+
+test: exemple.ml
+	${OCAML} ${OCAMLFLAGS} ${OCAMLLD} -o exemple exemple.ml
+
+clean::
+	rm -f *~ *.o *.cm? test
+
