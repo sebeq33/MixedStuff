@@ -1,0 +1,52 @@
+{
+  "name": "example5-Pokedex",
+  "version": "1.0.0",
+  "description": "Create a simple pokedex",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --history-api-fallback --content-base app/root",
+    "build": "node node_modules/webpack/bin/webpack.js",
+    "build:prod": "set NODE_ENV=production&& node node_modules/webpack/bin/webpack.js && zip -r dist.zip dist/",
+    "test:NotFound": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokemon-not-found-test.js",
+    "test:row": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokemon-row-test.js",
+    "test:image": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokemon-image-test.js",
+    "test:description": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokemon-description-test.js",
+    "test:table": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokemon-table-test.js",
+    "test:information": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokemon-information-test.js",
+    "test:pokedex": "node node_modules/mocha/bin/mocha test/setup.js test/tests/pokedex-test.js"
+  },
+  "author": "jbpetit@excilys.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^3.5.0",
+    "css-loader": "^0.28.0",
+    "enzyme": "^2.8.0",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-react": "^6.10.3",
+    "jsdom": "^9.12.0",
+    "json-loader": "^0.5.4",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.13",
+    "react-addons-test-utils": "^15.5.1",
+    "style-loader": "^0.16.1",
+    "transfer-webpack-plugin": "^0.1.4",
+    "uglify-loader": "^2.0.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "bulma": "^0.4.0",
+    "classnames": "^2.2.5",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-progress-2": "^4.3.0",
+    "react-router": "2.8.1"
+  }
+}

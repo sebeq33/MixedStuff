@@ -1,0 +1,610 @@
+.pokemon-icon {
+    width: 130px;
+    height: 120px;
+    background: url("./pokemon-g1.jpg") no-repeat;
+    display: inline-block;
+}
+
+.pokemon-icon.n1 {
+    background-position: 0 0
+}
+
+.pokemon-icon.n2 {
+    background-position: -120px 0
+}
+
+.pokemon-icon.n3 {
+    background-position: -240px 0
+}
+
+.pokemon-icon.n4 {
+    background-position: -360px 0
+}
+
+.pokemon-icon.n5 {
+    background-position: -480px 0
+}
+
+.pokemon-icon.n6 {
+    background-position: -600px 0
+}
+
+.pokemon-icon.n7 {
+    background-position: -720px 0
+}
+
+.pokemon-icon.n8 {
+    background-position: -840px 0
+}
+
+.pokemon-icon.n9 {
+    background-position: 0 -120px
+}
+
+.pokemon-icon.n10 {
+    background-position: -120px -120px
+}
+
+.pokemon-icon.n11 {
+    background-position: -240px -120px
+}
+
+.pokemon-icon.n12 {
+    background-position: -360px -120px
+}
+
+.pokemon-icon.n13 {
+    background-position: -480px -120px
+}
+
+.pokemon-icon.n14 {
+    background-position: -600px -120px
+}
+
+.pokemon-icon.n15 {
+    background-position: -720px -120px
+}
+
+.pokemon-icon.n16 {
+    background-position: -840px -120px
+}
+
+.pokemon-icon.n17 {
+    background-position: 0 -240px
+}
+
+.pokemon-icon.n18 {
+    background-position: -120px -240px
+}
+
+.pokemon-icon.n19 {
+    background-position: -240px -240px
+}
+
+.pokemon-icon.n20 {
+    background-position: -360px -240px
+}
+
+.pokemon-icon.n21 {
+    background-position: -480px -240px
+}
+
+.pokemon-icon.n22 {
+    background-position: -600px -240px
+}
+
+.pokemon-icon.n23 {
+    background-position: -720px -240px
+}
+
+.pokemon-icon.n24 {
+    background-position: -840px -240px
+}
+
+.pokemon-icon.n25 {
+    background-position: 0 -360px
+}
+
+.pokemon-icon.n26 {
+    background-position: -120px -360px
+}
+
+.pokemon-icon.n27 {
+    background-position: -240px -360px
+}
+
+.pokemon-icon.n28 {
+    background-position: -360px -360px
+}
+
+.pokemon-icon.n29 {
+    background-position: -480px -360px
+}
+
+.pokemon-icon.n30 {
+    background-position: -600px -360px
+}
+
+.pokemon-icon.n31 {
+    background-position: -720px -360px
+}
+
+.pokemon-icon.n32 {
+    background-position: -840px -360px
+}
+
+.pokemon-icon.n33 {
+    background-position: 0 -480px
+}
+
+.pokemon-icon.n34 {
+    background-position: -120px -480px
+}
+
+.pokemon-icon.n35 {
+    background-position: -240px -480px
+}
+
+.pokemon-icon.n36 {
+    background-position: -360px -480px
+}
+
+.pokemon-icon.n37 {
+    background-position: -480px -480px
+}
+
+.pokemon-icon.n38 {
+    background-position: -600px -480px
+}
+
+.pokemon-icon.n39 {
+    background-position: -720px -480px
+}
+
+.pokemon-icon.n40 {
+    background-position: -840px -480px
+}
+
+.pokemon-icon.n41 {
+    background-position: 0 -600px
+}
+
+.pokemon-icon.n42 {
+    background-position: -120px -600px
+}
+
+.pokemon-icon.n43 {
+    background-position: -240px -600px
+}
+
+.pokemon-icon.n44 {
+    background-position: -360px -600px
+}
+
+.pokemon-icon.n45 {
+    background-position: -480px -600px
+}
+
+.pokemon-icon.n46 {
+    background-position: -600px -600px
+}
+
+.pokemon-icon.n47 {
+    background-position: -720px -600px
+}
+
+.pokemon-icon.n48 {
+    background-position: -840px -600px
+}
+
+.pokemon-icon.n49 {
+    background-position: 0 -720px
+}
+
+.pokemon-icon.n50 {
+    background-position: -120px -720px
+}
+
+.pokemon-icon.n51 {
+    background-position: -240px -720px
+}
+
+.pokemon-icon.n52 {
+    background-position: -360px -720px
+}
+
+.pokemon-icon.n53 {
+    background-position: -480px -720px
+}
+
+.pokemon-icon.n54 {
+    background-position: -600px -720px
+}
+
+.pokemon-icon.n55 {
+    background-position: -720px -720px
+}
+
+.pokemon-icon.n56 {
+    background-position: -840px -720px
+}
+
+.pokemon-icon.n57 {
+    background-position: 0 -840px
+}
+
+.pokemon-icon.n58 {
+    background-position: -120px -840px
+}
+
+.pokemon-icon.n59 {
+    background-position: -240px -840px
+}
+
+.pokemon-icon.n60 {
+    background-position: -360px -840px
+}
+
+.pokemon-icon.n61 {
+    background-position: -480px -840px
+}
+
+.pokemon-icon.n62 {
+    background-position: -600px -840px
+}
+
+.pokemon-icon.n63 {
+    background-position: -720px -840px
+}
+
+.pokemon-icon.n64 {
+    background-position: -840px -840px
+}
+
+.pokemon-icon.n65 {
+    background-position: 0 -960px
+}
+
+.pokemon-icon.n66 {
+    background-position: -120px -960px
+}
+
+.pokemon-icon.n67 {
+    background-position: -240px -960px
+}
+
+.pokemon-icon.n68 {
+    background-position: -360px -960px
+}
+
+.pokemon-icon.n69 {
+    background-position: -480px -960px
+}
+
+.pokemon-icon.n70 {
+    background-position: -600px -960px
+}
+
+.pokemon-icon.n71 {
+    background-position: -720px -960px
+}
+
+.pokemon-icon.n72 {
+    background-position: -840px -960px
+}
+
+.pokemon-icon.n73 {
+    background-position: 0 -1080px
+}
+
+.pokemon-icon.n74 {
+    background-position: -120px -1080px
+}
+
+.pokemon-icon.n75 {
+    background-position: -240px -1080px
+}
+
+.pokemon-icon.n76 {
+    background-position: -360px -1080px
+}
+
+.pokemon-icon.n77 {
+    background-position: -480px -1080px
+}
+
+.pokemon-icon.n78 {
+    background-position: -600px -1080px
+}
+
+.pokemon-icon.n79 {
+    background-position: -720px -1080px
+}
+
+.pokemon-icon.n80 {
+    background-position: -840px -1080px
+}
+
+.pokemon-icon.n81 {
+    background-position: 0 -1200px
+}
+
+.pokemon-icon.n82 {
+    background-position: -120px -1200px
+}
+
+.pokemon-icon.n83 {
+    background-position: -240px -1200px
+}
+
+.pokemon-icon.n84 {
+    background-position: -360px -1200px
+}
+
+.pokemon-icon.n85 {
+    background-position: -480px -1200px
+}
+
+.pokemon-icon.n86 {
+    background-position: -600px -1200px
+}
+
+.pokemon-icon.n87 {
+    background-position: -720px -1200px
+}
+
+.pokemon-icon.n88 {
+    background-position: -840px -1200px
+}
+
+.pokemon-icon.n89 {
+    background-position: 0 -1320px
+}
+
+.pokemon-icon.n90 {
+    background-position: -120px -1320px
+}
+
+.pokemon-icon.n91 {
+    background-position: -240px -1320px
+}
+
+.pokemon-icon.n92 {
+    background-position: -360px -1320px
+}
+
+.pokemon-icon.n93 {
+    background-position: -480px -1320px
+}
+
+.pokemon-icon.n94 {
+    background-position: -600px -1320px
+}
+
+.pokemon-icon.n95 {
+    background-position: -720px -1320px
+}
+
+.pokemon-icon.n96 {
+    background-position: -840px -1320px
+}
+
+.pokemon-icon.n97 {
+    background-position: 0 -1440px
+}
+
+.pokemon-icon.n98 {
+    background-position: -120px -1440px
+}
+
+.pokemon-icon.n99 {
+    background-position: -240px -1440px
+}
+
+.pokemon-icon.n100 {
+    background-position: -360px -1440px
+}
+
+.pokemon-icon.n101 {
+    background-position: -480px -1440px
+}
+
+.pokemon-icon.n102 {
+    background-position: -600px -1440px
+}
+
+.pokemon-icon.n103 {
+    background-position: -720px -1440px
+}
+
+.pokemon-icon.n104 {
+    background-position: -840px -1440px
+}
+
+.pokemon-icon.n105 {
+    background-position: 0 -1560px
+}
+
+.pokemon-icon.n106 {
+    background-position: -120px -1560px
+}
+
+.pokemon-icon.n107 {
+    background-position: -240px -1560px
+}
+
+.pokemon-icon.n108 {
+    background-position: -360px -1560px
+}
+
+.pokemon-icon.n109 {
+    background-position: -480px -1560px
+}
+
+.pokemon-icon.n110 {
+    background-position: -600px -1560px
+}
+
+.pokemon-icon.n111 {
+    background-position: -720px -1560px
+}
+
+.pokemon-icon.n112 {
+    background-position: -840px -1560px
+}
+
+.pokemon-icon.n113 {
+    background-position: 0 -1680px
+}
+
+.pokemon-icon.n114 {
+    background-position: -120px -1680px
+}
+
+.pokemon-icon.n115 {
+    background-position: -240px -1680px
+}
+
+.pokemon-icon.n116 {
+    background-position: -360px -1680px
+}
+
+.pokemon-icon.n117 {
+    background-position: -480px -1680px
+}
+
+.pokemon-icon.n118 {
+    background-position: -600px -1680px
+}
+
+.pokemon-icon.n119 {
+    background-position: -720px -1680px
+}
+
+.pokemon-icon.n120 {
+    background-position: -840px -1680px
+}
+
+.pokemon-icon.n121 {
+    background-position: 0 -1800px
+}
+
+.pokemon-icon.n122 {
+    background-position: -120px -1800px
+}
+
+.pokemon-icon.n123 {
+    background-position: -240px -1800px
+}
+
+.pokemon-icon.n124 {
+    background-position: -360px -1800px
+}
+
+.pokemon-icon.n125 {
+    background-position: -480px -1800px
+}
+
+.pokemon-icon.n126 {
+    background-position: -600px -1800px
+}
+
+.pokemon-icon.n127 {
+    background-position: -720px -1800px
+}
+
+.pokemon-icon.n128 {
+    background-position: -840px -1800px
+}
+
+.pokemon-icon.n129 {
+    background-position: 0 -1920px
+}
+
+.pokemon-icon.n130 {
+    background-position: -120px -1920px
+}
+
+.pokemon-icon.n131 {
+    background-position: -240px -1920px
+}
+
+.pokemon-icon.n132 {
+    background-position: -360px -1920px
+}
+
+.pokemon-icon.n133 {
+    background-position: -480px -1920px
+}
+
+.pokemon-icon.n134 {
+    background-position: -600px -1920px
+}
+
+.pokemon-icon.n135 {
+    background-position: -720px -1920px
+}
+
+.pokemon-icon.n136 {
+    background-position: -840px -1920px
+}
+
+.pokemon-icon.n137 {
+    background-position: 0 -2040px
+}
+
+.pokemon-icon.n138 {
+    background-position: -120px -2040px
+}
+
+.pokemon-icon.n139 {
+    background-position: -240px -2040px
+}
+
+.pokemon-icon.n140 {
+    background-position: -360px -2040px
+}
+
+.pokemon-icon.n141 {
+    background-position: -480px -2040px
+}
+
+.pokemon-icon.n142 {
+    background-position: -600px -2040px
+}
+
+.pokemon-icon.n143 {
+    background-position: -720px -2040px
+}
+
+.pokemon-icon.n144 {
+    background-position: -840px -2040px
+}
+
+.pokemon-icon.n145 {
+    background-position: 0 -2160px
+}
+
+.pokemon-icon.n146 {
+    background-position: -120px -2160px
+}
+
+.pokemon-icon.n147 {
+    background-position: -240px -2160px
+}
+
+.pokemon-icon.n148 {
+    background-position: -360px -2160px
+}
+
+.pokemon-icon.n149 {
+    background-position: -480px -2160px
+}
+
+.pokemon-icon.n150 {
+    background-position: -600px -2160px
+}
+
+.pokemon-icon.n151 {
+    background-position: -720px -2160px
+}
