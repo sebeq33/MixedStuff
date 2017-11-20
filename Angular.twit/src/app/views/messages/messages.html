@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="box text-box">
+    Nouveau message
+    <div>
+      <textarea ng-model="messages.currentMessage" maxlength="{{messages.limit}}"></textarea>
+      <div class="textarea-count">
+        {{messages.currentMessage.length}} / {{messages.limit}}
+        <div class="box-button" ng-click='messages.sendMessage()'>Envoyer</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="categ-title"></div>
+  <div class="response-box" ng-repeat="message in messages.data
+            | orderBy:'-sendDate'
+            | limitTo:10:0">
+    <div class="box response-message">
+      <div class="message-pic">
+        <img ng-src="{{message.gravatarUrl}}"/>
+      </div>
+      <div class="message-content">
+        <a href="/#!/profile/{{message.userName}}"<span class="message-author">@{{message.userName}}</span></a>
+        <div class="message-value">
+                {{message.msg}}
+        </div>
+        <div class="message-time">{{message.sendDate | dateFromNow}}</div>
+        <div class="message-more">
+          <span ng-click="messages.show(message)"
+                ng-if="!message.showComments && message.comments.length > 0">Voir les réponses ({{message.comments.length}})
+                    <i ng-class="messages.getCarret(message)"></i>
+          </span>
+          <span ng-click="messages.show(message)"
+                ng-if=" !message.showComments && message.comments.length === 0">Commenter
+                <i ng-class="messages.getCarret(message)"></i>
+          </span>
+        </div>
+        <div class="message-more">
+          <span ng-click="messages.show(message)"
+                ng-if="message.showComments">Masquer
+                    <i class="fa fa-caret-up"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="box response-comment" ng-repeat="comment in message.comments" ng-show="message.showComments">
+      <div class="comment-pic">
+        <img ng-src="{{comment.gravatarUrl}}"/>
+      </div>
+      <div class="comment-content">
+        <span class="comment-author">@{{comment.userName}}</span>
+        <div class="comment-value">{{comment.msg}}</div>
+        <div class="comment-time">{{comment.sendDate | dateFromNow}}</div>
+      </div>
+    </div>
+    <div ng-if="message.showComments" class="box response-comment-text">
+      Réponse à ce message
+      <div>
+        <textarea ng-model="message.response" maxlength="{{messages.limit}}"></textarea>
+        <div class="textarea-count" >
+          {{message.response.length}} / {{messages.limit}}
+          <div class="box-button" ng-click="message.sendResponse()">Répondre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

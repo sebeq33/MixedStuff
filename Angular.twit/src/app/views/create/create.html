@@ -1,0 +1,48 @@
+<div class="forma-box">
+  <div class="forma-box-title">
+    Création de compte
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Pseudo</div>
+    <div class="forma-form-input">
+      <input ng-model="create.name" type="text"/>
+    </div>
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Email</div>
+    <div class="forma-form-input">
+      <input ng-model="create.email" type="email"/>
+    </div>
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Mot de passe</div>
+    <div class="forma-form-input">
+      <input ng-model="create.pass" type="password"/>
+    </div>
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Confirmation du mot de passe</div>
+    <div class="forma-form-input">
+      <input ng-model="create.confirm" type="password"/>
+    </div>
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Description</div>
+    <div class="forma-form-input">
+      <textarea ng-model="create.desc" rows="5"></textarea>
+    </div>
+  </div>
+
+  <div class="forma-btn">
+    <span ng-click="create.send()">Créer un compte</span>
+  </div>
+
+  <div class="forma-error">
+        {{create.message}}
+  </div>
+</div>

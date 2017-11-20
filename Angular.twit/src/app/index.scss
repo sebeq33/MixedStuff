@@ -1,0 +1,455 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+$media-lt-1024: "(max-width : 1024px)";
+$media-lt-800: "(max-width : 800px)";
+$media-lt-640: "(max-width : 640px)";
+
+$dark-blue: blue;
+$common-blue: royalblue;
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-size: 16px;
+  @media #{$media-lt-640} {
+    font-size: 12px;
+  }
+
+  background: rgb(228, 228, 228);
+  font-family: 'Montserrat', sans-serif;
+
+  * {
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  a {
+    color: $dark-blue;
+    &:visited {
+      color: $dark-blue;
+    }
+    &:hover {
+      color: $common-blue;
+    }
+    &:link {
+      color: $dark-blue;
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  vertical-align: middle;
+  padding: 0 10px;
+  background: white;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.content {
+  top: 50px;
+  left: 0;
+  z-index: 2;
+  position: fixed;
+  height: calc(100% - 50px);
+  width: 100%;
+
+  padding: 20px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.container {
+
+  width: 780px;
+  margin: 0 calc(50% - 390px);
+
+  @media #{$media-lt-1024} {
+    width: 780px;
+    margin: 0 calc(50% - 390px);
+  }
+  @media #{$media-lt-800} {
+    width: 620px;
+    margin: 0 calc(50% - 310px);
+  }
+  @media #{$media-lt-640} {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+  }
+}
+
+.box {
+  background: white;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.3), -1px -1px 2px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.box-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background: $dark-blue;
+  color: white;
+  margin: 0 0 0 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.text-box {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+
+  textarea {
+    width: calc(100% - 20px);
+    min-height: 80px;
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+  .textarea-count {
+    font-size: 0.9em;
+    text-align: right;
+    &.too-much {
+      color: red;
+    }
+  }
+}
+
+.response-box {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin: 20px 0;
+
+  .response-message {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    .message-pic {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .message-content {
+      display: inline-block;
+      flex: 1;
+      padding: 10px;
+      max-width: calc(100% - 100px);
+      word-wrap: break-word;
+
+      .message-author {
+        font-weight: bold;
+        color: $common-blue;
+        cursor: pointer;
+      }
+      .message-value {
+        margin: 10px;
+      }
+      .message-time {
+        font-size: 0.9em;
+        text-align: right;
+        color: grey;
+        font-style: italic;
+      }
+      .message-more {
+        margin-top: 8px;
+        text-align: right;
+        span {
+          color: $common-blue;
+          cursor: pointer;
+          font-size: 0.8em;
+        }
+      }
+    }
+
+  }
+  .response-comment {
+    position: relative;
+    display: flex;
+    width: 100%;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    border-radius: 0;
+    padding: 10px 20px 10px 60px;
+    font-size: 0.9em;
+
+    border-top: 1px solid #d6d6d6;
+
+    .comment-pic {
+      width: 70px;
+      height: 70px;
+      padding: 10px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        overflow: hidden;
+      }
+    }
+    .comment-content {
+      display: inline-block;
+      flex: 1;
+      padding: 10px;
+
+      .comment-author {
+        font-weight: bold;
+        color: $common-blue;
+      }
+      .comment-value {
+        margin: 10px;
+      }
+      .comment-time {
+        font-size: 0.9em;
+        text-align: right;
+        color: grey;
+        font-style: italic;
+      }
+    }
+  }
+  .response-comment-text {
+    position: relative;
+    width: 100%;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    border-radius: 0 0 2px 2px;
+    border-top: 1px solid #d6d6d6;
+    font-size: 0.9em;
+
+    textarea {
+      width: calc(100% - 20px);
+      min-height: 60px;
+      margin: 10px;
+    }
+    .textarea-count {
+      font-size: 0.9em;
+      text-align: right;
+      &.too-much {
+        color: red;
+      }
+    }
+  }
+}
+
+.forma-box {
+  position: relative;
+  display: inline-flex;
+
+  margin: 30px;
+
+  background: white;
+
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  max-width: calc(100% - 60px);
+  width: 600px;
+
+  border-radius: 10px;
+
+  flex-direction: column;
+  align-items: center;
+
+  .forma-box-title {
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    font-size: 1.5em;
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+
+  .forma-form {
+    width: 240px;
+    font-size: 0.8em;
+    margin-bottom: 15px;
+    text-align: left;
+
+    .forma-form-input {
+      width: 100%;
+      input, textarea {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .forma-btn {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: white;
+    background: #C82869;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  .forma-error {
+    color: #C82869;
+    margin-bottom: 10px;
+  }
+
+  .forma-sublink {
+    cursor: pointer;
+  }
+
+}
+
+header-component {
+  height: 50px;
+  display: flex;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  background: white;
+
+  .header-title {
+    display: flex;
+    flex: 1;
+    padding: 0 20px;
+    font-size: 1.5em;
+    align-items: center;
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    .header-action {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 1.1em;
+      padding: 0 20px;
+      cursor: pointer;
+      align-items: center;
+
+      i {
+        margin-left: 5px;
+      }
+
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+  }
+}
+
+.profile-box {
+  display: inline-block;
+  width: 450px;
+  margin: 20px 10px;
+  max-width: calc(100% - 20px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  padding: 20px;
+  background: white;
+
+  border-radius: 20px;
+
+  .profile-name {
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    padding: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-radius: 20px;
+
+    .profile-name-sub {
+      font-size: 0.5em;
+      margin-top: 5px;
+      font-style: italic;
+      color: #555;
+    }
+  }
+
+  .profile-pic {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 10px;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .profile-rank {
+    margin-bottom: 25px;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .profile-xp {
+    line-height: 1em;
+    .xp-bar {
+      width: 80%;
+      height: 10px;
+      position: relative;
+      display: inline-block;
+      background: #444;
+      border: 1px solid #333;
+
+      .xp-content{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #C82869;
+        height: 8px;
+        border-right: 2px solid #eb2b83;
+      }
+    }
+
+    .xp {
+      font-size: 0.8em;
+    }
+  }
+
+  .profile-desc {
+    margin-top: 5px;
+    padding: 15px;
+    font-style: italic;
+    font-size: 0.8em;
+    line-height: 0.9em;
+
+    i {
+      margin: 0 5px;
+    }
+  }
+}
+
+/* Do not remove the comments below. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector

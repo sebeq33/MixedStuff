@@ -1,0 +1,31 @@
+<div class="forma-box">
+  <div class="forma-box-title">
+    Connexion
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Pseudo</div>
+    <div class="forma-form-input">
+      <input ng-model="login.name" type="text"/>
+    </div>
+  </div>
+
+  <div class="forma-form">
+    <div class="forma-form-title">Mot de passe</div>
+    <div class="forma-form-input">
+      <input ng-model="login.pass" type="password"/>
+    </div>
+  </div>
+
+  <div class="forma-btn">
+    <span ng-click="login.send()">Se connecter</span>
+  </div>
+
+  <div class="forma-error">
+      {{login.message}}
+  </div>
+
+  <div class="forma-sublink">
+    <a href="/#!/create">Créer un compte</a>
+  </div>
+</div>

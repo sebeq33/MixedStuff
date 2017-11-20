@@ -1,0 +1,16 @@
+<div class="header-title">
+  <span>Formation AngularJS</span>
+</div>
+<div class="header-actions" >
+  <div class="header-action">
+    <span ng-click="header.profilePage()">
+        <span ng-show="!header.user">Login</span>
+        <span ng-show="header.user">Profil <i class="fa fa-user"></i><span>
+    </span>
+  </div>
+  <div ng-show="header.user" class="header-action">
+      <span ng-click="header.logout()">
+          Se déconnecter <i class="fa fa-user"></i>
+      </span>
+  </div>
+</div>
